@@ -54,9 +54,11 @@ public class BombayAdda extends AppCompatActivity implements View.OnClickListene
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(BombayAdda.this, date, myCalendar
+                DatePickerDialog d1 = new DatePickerDialog(BombayAdda.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                        myCalendar.get(Calendar.DAY_OF_MONTH));
+                d1.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+                d1.show();
             }
         });
 

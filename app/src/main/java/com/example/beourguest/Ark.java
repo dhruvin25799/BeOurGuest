@@ -51,9 +51,11 @@ public class Ark extends AppCompatActivity implements ViewPager.OnPageChangeList
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(Ark.this, date, myCalendar
+                DatePickerDialog d1 = new DatePickerDialog (Ark.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                        myCalendar.get(Calendar.DAY_OF_MONTH));
+                d1.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+                d1.show();
             }
         });
 
