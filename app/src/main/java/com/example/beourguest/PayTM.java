@@ -26,6 +26,7 @@ public class PayTM extends AppCompatActivity implements PaytmPaymentTransactionC
     Bundle mbundle;
     FirebaseAuth mAuth;
     String oid;
+    String pay="15";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +65,7 @@ public class PayTM extends AppCompatActivity implements PaytmPaymentTransactionC
                     "MID="+mid+
                             "&ORDER_ID=" +orderId+
                             "&CUST_ID="+custid+
-                            "&CHANNEL_ID=WAP&TXN_AMOUNT=10&WEBSITE=DEFAULT"+
+                            "&CHANNEL_ID=WAP&TXN_AMOUNT="+pay+"&WEBSITE=DEFAULT"+
                             "&CALLBACK_URL="+varifyurl+"&INDUSTRY_TYPE_ID=Retail";
 
             JSONObject jsonObject = jsonParser.makeHttpRequest(url,"POST",param);
@@ -97,7 +98,7 @@ public class PayTM extends AppCompatActivity implements PaytmPaymentTransactionC
             paramMap.put("ORDER_ID", orderId);
             paramMap.put("CUST_ID", custid);
             paramMap.put("CHANNEL_ID", "WAP");
-            paramMap.put("TXN_AMOUNT", "10");
+            paramMap.put("TXN_AMOUNT", pay);
             paramMap.put("WEBSITE", "DEFAULT");
             paramMap.put("CALLBACK_URL" ,varifyurl);
             paramMap.put("CHECKSUMHASH" ,CHECKSUMHASH);
@@ -133,7 +134,7 @@ public class PayTM extends AppCompatActivity implements PaytmPaymentTransactionC
         } else {
             //If transaction failed return to previous intent, Toast about transaction failure
             startActivity(new Intent(this,Home_Screen.class));
-            finish();
+            finishAffinity();
             Toast.makeText(getApplicationContext(),"Transaction Failed!",Toast.LENGTH_LONG).show();
 
         }
@@ -142,14 +143,14 @@ public class PayTM extends AppCompatActivity implements PaytmPaymentTransactionC
     @Override
     public void networkNotAvailable() {
         startActivity(new Intent(this,Home_Screen.class));
-        finish();
+        finishAffinity();
         Toast.makeText(getApplicationContext(),"Transaction Failed!",Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void clientAuthenticationFailed(String s) {
         startActivity(new Intent(this,Home_Screen.class));
-        finish();
+        finishAffinity();
         Toast.makeText(getApplicationContext(),"Transaction Failed!",Toast.LENGTH_LONG).show();
     }
 
@@ -157,7 +158,7 @@ public class PayTM extends AppCompatActivity implements PaytmPaymentTransactionC
     public void someUIErrorOccurred(String s) {
         Log.e("checksum ", " ui fail respon  "+ s );
         startActivity(new Intent(this,Home_Screen.class));
-        finish();
+        finishAffinity();
         Toast.makeText(getApplicationContext(),"Transaction Failed!",Toast.LENGTH_LONG).show();
     }
 
@@ -165,7 +166,7 @@ public class PayTM extends AppCompatActivity implements PaytmPaymentTransactionC
     public void onErrorLoadingWebPage(int i, String s, String s1) {
         Log.e("checksum ", " error loading pagerespon true "+ s + "  s1 " + s1);
         startActivity(new Intent(this,Home_Screen.class));
-        finish();
+        finishAffinity();
         Toast.makeText(getApplicationContext(),"Transaction Failed!",Toast.LENGTH_LONG).show();
     }
 
@@ -173,7 +174,7 @@ public class PayTM extends AppCompatActivity implements PaytmPaymentTransactionC
     public void onBackPressedCancelTransaction() {
         Log.e("checksum ", " cancel call back respon  " );
         startActivity(new Intent(this,Home_Screen.class));
-        finish();
+        finishAffinity();
         Toast.makeText(getApplicationContext(),"Transaction Failed!",Toast.LENGTH_LONG).show();
     }
 
@@ -181,7 +182,7 @@ public class PayTM extends AppCompatActivity implements PaytmPaymentTransactionC
     public void onTransactionCancel(String s, Bundle bundle) {
         Log.e("checksum ", "  transaction cancel " );
         startActivity(new Intent(this,Home_Screen.class));
-        finish();
+        finishAffinity();
         Toast.makeText(getApplicationContext(),"Transaction Failed!",Toast.LENGTH_LONG).show();
     }
 }

@@ -58,7 +58,7 @@ public class Confirm extends AppCompatActivity {
     public void onBackPressed() {
         startActivity(new Intent(this,Home_Screen.class));
         overridePendingTransition(R.anim.goup,R.anim.godown);
-        finish();
+        finishAffinity();
     }
 
 
@@ -153,7 +153,7 @@ public class Confirm extends AppCompatActivity {
     public void onHomeClick(View v) {
         startActivity(new Intent(this,Home_Screen.class));
         overridePendingTransition(R.anim.goup,R.anim.godown);
-        finish();
+        finishAffinity();
     }
     public void onNeedHelpClick(View v) {
         Snackbar.make(v,"Contact Us at 7228985777",Snackbar.LENGTH_SHORT).show();
