@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,6 +57,7 @@ public class Confirm extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         startActivity(new Intent(this,Home_Screen.class));
+        overridePendingTransition(R.anim.goup,R.anim.godown);
         finish();
     }
 
@@ -150,6 +152,10 @@ public class Confirm extends AppCompatActivity {
     }
     public void onHomeClick(View v) {
         startActivity(new Intent(this,Home_Screen.class));
+        overridePendingTransition(R.anim.goup,R.anim.godown);
         finish();
+    }
+    public void onNeedHelpClick(View v) {
+        Snackbar.make(v,"Contact Us at 7228985777",Snackbar.LENGTH_SHORT).show();
     }
 }

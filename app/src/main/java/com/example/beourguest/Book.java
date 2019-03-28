@@ -26,15 +26,18 @@ public class Book extends AppCompatActivity {
         Intent confirmintent = new Intent(this,Confirm.class);
         confirmintent.putExtra("info",bundle);
         startActivity(confirmintent);
+        overridePendingTransition(R.anim.goup,R.anim.godown);
     }
     public void onPayTmClick(View v) {
         bundle.putString("paymentmode","PayTm");
         Intent confirmintent = new Intent(this,PayTM.class);
         confirmintent.putExtra("info",bundle);
         startActivity(confirmintent);
+        overridePendingTransition(R.anim.goup,R.anim.godown);
     }
     public void onCancelClick(View v) {
         startActivity(new Intent(this,Home_Screen.class));
+        overridePendingTransition(R.anim.goup,R.anim.godown);
         finish();
     }
 }

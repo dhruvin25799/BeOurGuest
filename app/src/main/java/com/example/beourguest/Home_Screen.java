@@ -25,16 +25,16 @@ public class Home_Screen extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new Club_Home()).commit();
+                    getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.goup,R.anim.godown).replace(R.id.fragment,new Club_Home()).commit();
                     return true;
                 case R.id.navigation_events:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new My_Events_Fragment()).commit();
+                    getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.goup,R.anim.godown).replace(R.id.fragment,new My_Events_Fragment()).commit();
                     return true;
                 case R.id.navigation_docs:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new My_Docs_Fragment()).commit();
+                    getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.goup,R.anim.godown).replace(R.id.fragment,new My_Docs_Fragment()).commit();
                     return true;
                 case R.id.navigation_more:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new More_Fragment()).commit();
+                    getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.goup,R.anim.godown).replace(R.id.fragment,new More_Fragment()).commit();
                     return true;
             }
             return false;

@@ -130,6 +130,7 @@ public class Ark extends AppCompatActivity implements ViewPager.OnPageChangeList
         intent.putExtra("total",totalatax.getText().toString());
         intent.putExtra("club_logo",Integer.toString(R.drawable.ark_logo));
         startActivity(intent);
+        overridePendingTransition(R.anim.goup,R.anim.godown);
     }
     public void showFABMenu() {
         isFABOpen=true;

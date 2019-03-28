@@ -9,6 +9,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/black"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -259,6 +260,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="onHomeClick"
                     android:text="Home"
                     android:textAlignment="center"
                     android:textColor="@color/colorAccent"
@@ -278,6 +280,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="onNeedHelpClick"
                     android:text="Need Help?"
                     android:textColor="@color/colorAccent"
                     android:textSize="18sp"

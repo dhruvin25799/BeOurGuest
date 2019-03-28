@@ -132,8 +132,8 @@ public class Mitron extends AppCompatActivity implements View.OnClickListener, V
         intent.putExtra("couple",couplecount.getText().toString());
         intent.putExtra("total",totalatax.getText().toString());
         intent.putExtra("club_logo",Integer.toString(R.drawable.mitron_logo));
-
         startActivity(intent);
+        overridePendingTransition(R.anim.goup,R.anim.godown);
     }
     public void showFABMenu() {
         isFABOpen=true;

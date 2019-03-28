@@ -1,11 +1,14 @@
 package com.example.beourguest;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -68,5 +71,13 @@ public class ReOpenBook extends AppCompatActivity {
             progDailog.dismiss();
             super.onPostExecute(aVoid);
         }
+    }
+    public void onHomeClick(View v) {
+        startActivity(new Intent(this,Home_Screen.class));
+        overridePendingTransition(R.anim.goup,R.anim.godown);
+        finish();
+    }
+    public void onNeedHelpClick(View v) {
+        Snackbar.make(v,"Contact Us at 7228985777",Snackbar.LENGTH_SHORT).show();
     }
 }

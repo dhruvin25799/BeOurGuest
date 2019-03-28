@@ -1,5 +1,6 @@
 package com.example.beourguest;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -77,6 +78,7 @@ public class booking_adapter extends RecyclerView.Adapter<booking_adapter.bookin
             intent.putExtra("gtotal",booking.getgtotal());
             intent.putExtra("qrkey",booking.getkey());
             mCtx.startActivity(intent);
+            ((Activity)mCtx).overridePendingTransition(R.anim.goup,R.anim.godown);
         }
     }
 }

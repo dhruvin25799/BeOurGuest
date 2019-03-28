@@ -1,5 +1,6 @@
 package com.example.beourguest;
 //Slider Adapter for Main Home Page Club Slider
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
@@ -78,12 +79,15 @@ public class SliderAdapter extends PagerAdapter {
         switch(position) {
             case 0 :
                 context.startActivity(new Intent(context,Ark.class));
+                ((Activity)context).overridePendingTransition(R.anim.goup,R.anim.godown);
                 break;
             case 1 :
                 context.startActivity(new Intent(context,Mitron.class));
+                ((Activity)context).overridePendingTransition(R.anim.goup,R.anim.godown);
                 break;
             case 2:
                 context.startActivity(new Intent(context,BombayAdda.class));
+                ((Activity)context).overridePendingTransition(R.anim.goup,R.anim.godown);
                 break;
         }
     }
