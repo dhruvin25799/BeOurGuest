@@ -132,7 +132,7 @@ public class PayTM extends AppCompatActivity implements PaytmPaymentTransactionC
             finish();
         } else {
             //If transaction failed return to previous intent, Toast about transaction failure
-            startActivity(new Intent(this,Book.class));
+            startActivity(new Intent(this,Home_Screen.class));
             finish();
             Toast.makeText(getApplicationContext(),"Transaction Failed!",Toast.LENGTH_LONG).show();
 
@@ -141,31 +141,47 @@ public class PayTM extends AppCompatActivity implements PaytmPaymentTransactionC
 
     @Override
     public void networkNotAvailable() {
-
+        startActivity(new Intent(this,Home_Screen.class));
+        finish();
+        Toast.makeText(getApplicationContext(),"Transaction Failed!",Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void clientAuthenticationFailed(String s) {
-
+        startActivity(new Intent(this,Home_Screen.class));
+        finish();
+        Toast.makeText(getApplicationContext(),"Transaction Failed!",Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void someUIErrorOccurred(String s) {
         Log.e("checksum ", " ui fail respon  "+ s );
+        startActivity(new Intent(this,Home_Screen.class));
+        finish();
+        Toast.makeText(getApplicationContext(),"Transaction Failed!",Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onErrorLoadingWebPage(int i, String s, String s1) {
         Log.e("checksum ", " error loading pagerespon true "+ s + "  s1 " + s1);
+        startActivity(new Intent(this,Home_Screen.class));
+        finish();
+        Toast.makeText(getApplicationContext(),"Transaction Failed!",Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onBackPressedCancelTransaction() {
         Log.e("checksum ", " cancel call back respon  " );
+        startActivity(new Intent(this,Home_Screen.class));
+        finish();
+        Toast.makeText(getApplicationContext(),"Transaction Failed!",Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onTransactionCancel(String s, Bundle bundle) {
         Log.e("checksum ", "  transaction cancel " );
+        startActivity(new Intent(this,Home_Screen.class));
+        finish();
+        Toast.makeText(getApplicationContext(),"Transaction Failed!",Toast.LENGTH_LONG).show();
     }
 }

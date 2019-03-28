@@ -1,5 +1,4 @@
 package com.example.beourguest;
-//comment1
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
