@@ -164,7 +164,8 @@ public class Ark extends AppCompatActivity implements ViewPager.OnPageChangeList
             startActivity(mapIntent);
         }
         else if(id==R.id.zomatoFAB) {
-            Toast.makeText(getApplicationContext(),"YOLO!",Toast.LENGTH_SHORT).show();
+            Intent zomatouri = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.zomato.com/mumbai/ark-2-0-courtyard-by-marriott-chakala"));
+            startActivity(zomatouri);
         }
         else if(id==R.id.button_add) {
             int x = Integer.parseInt(stagcount.getText().toString());

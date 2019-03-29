@@ -165,7 +165,8 @@ public class BombayAdda extends AppCompatActivity implements View.OnClickListene
             startActivity(mapIntent);
         }
         else if(id==R.id.bzomatoFAB) {
-            Toast.makeText(getApplicationContext(),"YOLO!",Toast.LENGTH_SHORT).show();
+            Intent zomatouri = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.zomato.com/mumbai/bombay-adda-santacruz-west"));
+            startActivity(zomatouri);
         }
         else if(id==R.id.bbutton_add) {
             int x = Integer.parseInt(stagcount.getText().toString());
